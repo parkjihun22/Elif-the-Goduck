@@ -1,0 +1,300 @@
+// src/pages/Promotion/Customer.jsx
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import styles from "./Promotion.module.scss";
+
+import Header from "../../components/Header/Header";
+import FixIcon from "../../components/FixIcon/FixIcon";
+import Bener from "../../components/Bener/Bener";
+import MenuBar from "../../components/MenuBar/MenuBar";
+import Footer from "../../components/Footer/Footer";
+import { Helmet } from "react-helmet-async";
+
+export default function Customer() {
+  const { pathname } = useLocation();
+  useEffect(() => window.scrollTo(0, 0), [pathname]);
+
+  // 폼 상태
+  const [form, setForm] = useState({ name: "", phone: "", message: "" });
+  // 전송 중 플래그 & 결과 메시지
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [resultMessage, setResultMessage] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((p) => ({ ...p, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setResultMessage(""); 
+
+    try {
+      // Formspree 엔드포인트로 POST
+      const res = await fetch("https://formspree.io/f/mvznyjon", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          message: form.message,
+        }),
+      });
+
+      if (res.ok) {
+        setResultMessage("✅ 등록이 완료되었습니다. 곧 전문상담원이 연락드리도록 하겠습니다");
+        // 폼 초기화
+        setForm({ name: "", phone: "", message: "" });
+      } else {
+        setResultMessage("❌ 등록에 실패했습니다. 다시 시도해주세요.");
+      }
+    } catch (err) {
+      console.error(err);
+      setResultMessage("⚠️ 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+    }
+
+    setIsSubmitting(false);
+  };
+
+  const promoMenu = [
+    { key: "newsletter", title: "언론보도", url: "/Promotion/Press" },
+    { key: "interest", title: "방문예약등록", url: "/Promotion/Customer" },
+  ];
+
+  return (
+
+    <>
+
+<Helmet>
+  {/* 페이지별 메타 */}
+  <title>엘리프 고덕 센트럴하이 | 관심고객등록</title>
+
+  <meta
+    name="description"
+    content="엘리프 고덕 센트럴하이 관심고객등록 안내. 평택 고덕국제화계획지구 Aab-13BL ELIF 브랜드 아파트의 분양 정보, 청약 일정, 모델하우스 소식 및 주요 안내를 가장 먼저 확인하세요."
+  />
+
+  <meta
+    name="keywords"
+    content="엘리프 고덕 센트럴하이 관심고객등록, 평택 엘리프 고덕 센트럴하이, 고덕국제화계획지구 Aab-13BL, 평택 고덕 아파트 분양, 엘리프 고덕 센트럴하이 청약, 엘리프 고덕 센트럴하이 모델하우스"
+  />
+
+  <meta name="robots" content="index,follow" />
+
+  <link
+    rel="canonical"
+    href="https://www.diarivalencia.com/Promotion/Customer"
+  />
+
+  {/* Open Graph */}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="엘리프 고덕 센트럴하이" />
+
+  <meta
+    property="og:title"
+    content="엘리프 고덕 센트럴하이 | 관심고객등록"
+  />
+
+  <meta
+    property="og:description"
+    content="엘리프 고덕 센트럴하이 관심고객 등록 시 분양 일정, 청약 정보, 모델하우스 소식 등 주요 안내를 우선 받아보세요."
+  />
+
+  <meta
+    property="og:url"
+    content="https://www.diarivalencia.com/Promotion/Customer"
+  />
+
+  <meta
+    property="og:image"
+    content="https://www.diarivalencia.com/img/og/customer.jpg"
+  />
+
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta
+    name="twitter:title"
+    content="엘리프 고덕 센트럴하이 | 관심고객등록"
+  />
+
+  <meta
+    name="twitter:description"
+    content="엘리프 고덕 센트럴하이 관심고객 등록으로 분양 일정, 청약 정보, 모델하우스 소식을 확인하세요."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://www.diarivalencia.com/img/og/customer.jpg"
+  />
+
+  <meta
+    name="twitter:url"
+    content="https://www.diarivalencia.com/Promotion/Customer"
+  />
+
+  {/* JSON-LD */}
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+
+      "name": "엘리프 고덕 센트럴하이 - 관심고객등록",
+
+      "url": "https://www.diarivalencia.com/Promotion/Customer",
+
+      "description":
+        "엘리프 고덕 센트럴하이 관심고객등록 페이지입니다. 평택 고덕국제화계획지구 Aab-13BL ELIF 브랜드 아파트의 분양 일정, 청약 정보, 모델하우스 소식 등 주요 안내를 우선 제공합니다.",
+
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "contentUrl": "https://www.diarivalencia.com/img/og/customer.jpg",
+        "width": 1200,
+        "height": 630
+      },
+
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "홈",
+            "item": "https://www.diarivalencia.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "관심고객등록",
+            "item": "https://www.diarivalencia.com/Promotion/Customer"
+          }
+        ]
+      }
+    })}
+  </script>
+</Helmet>
+
+
+
+      <Header />
+      <FixIcon />
+
+      {/* 배너 */}
+      <Bener title="엘리프 고덕 센트럴하이" />
+
+      {/* 네비게이션 탭 */}
+      <MenuBar contents={promoMenu} />
+
+      {/* 좌·우 카드 레이아웃 */}
+      <div className={styles.customerWrap}>
+        {/* ─── 좌측 카드 ─── */}
+        <div className={styles.customerLeft}>
+          <div className={styles.textBlock}>
+            <h2 className={styles.projectName}>엘리프 고덕 센트럴하이</h2>
+            <h3 className={styles.pageTitle}>방문예약등록</h3>
+          </div>
+          <img
+            src="/img/sample1.jpg"
+            alt="방문예약등록 이미지"
+            className={styles.mainImage}
+          />
+          <div className={styles.serviceSection}>
+            <span className={styles.serviceBadge}>CUSTOMER SERVICE</span>
+            <h4 className={styles.serviceTitle}>방문예약등록</h4>
+            <p className={styles.serviceDesc}>
+              문의사항을 남겨주시면 빠르게 답변드리겠습니다.<br />
+              방문예약등록시 당사 분양소식을 받아보실 수 있습니다.
+            </p>
+            <div className={styles.serviceLine}></div>
+          </div>
+          <div className={styles.custInfo}>
+            <div className={styles.custItem}>
+              <i className="icon-phone" />
+              <div className={styles.infoText}>
+                <strong>대표번호</strong>
+                <span>1533-8848</span>
+              </div>
+            </div>
+            <div className={styles.custItem}>
+              <i className="icon-clock" />
+              <div className={styles.infoText}>
+                <strong>상담시간</strong>
+                <span>24시간 상담</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ─── 우측 카드 (폼) ─── */}
+        <div className={styles.customerRight}>
+          {/* 전송 결과 메시지 */}
+          {resultMessage && (
+            <div className={styles.submitResult}>{resultMessage}</div>
+          )}
+
+<form className={styles.custForm} onSubmit={handleSubmit}>
+  {/* 고객명 */}
+  <label className={styles.fieldLabel}>
+    고객명<span className={styles.required}></span>
+  </label>
+  <input
+    type="text"
+    name="name"
+    value={form.name}
+    onChange={handleChange}
+    placeholder="고객명"
+    required
+  />
+
+  {/* 연락처 */}
+  <label className={styles.fieldLabel}>
+    연락처<span className={styles.required}></span>
+  </label>
+  <input
+    type="tel"
+    name="phone"
+    value={form.phone}
+    onChange={handleChange}
+    placeholder="010-1234-5678"
+    required
+  />
+
+    {/* 연락처 */}
+    <label className={styles.fieldLabel}>
+    생년월일<span className={styles.required}></span>
+  </label>
+  <input
+    type="tel"
+    name="phone"
+    value={form.phone}
+    onChange={handleChange}
+    placeholder="950527"
+    required
+  />
+
+  {/* 문의내용 */}
+  <label className={styles.fieldLabel}>문의 내용
+  <span className={styles.required}></span>
+  </label>
+  <textarea
+    name="message"
+    value={form.message}
+    onChange={handleChange}
+    placeholder="문의 내용"
+  />
+
+  <button type="submit" disabled={isSubmitting}>
+    {isSubmitting ? "등록 중..." : "등록하기"}
+  </button>
+</form>
+        </div>
+      </div>
+
+      <Footer />
+    </>
+  );
+}
