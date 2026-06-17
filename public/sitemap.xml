@@ -8,7 +8,7 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <!-- 홈페이지 -->
 <url>
-<loc>https://www.diarivalencia.com/</loc>
+<loc>https://www.elifgodeok-central.co.kr/</loc>
 <lastmod>2026-06-17T09:00:00+09:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1.0</priority>
@@ -16,7 +16,7 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <!-- 브랜드소개 -->
 <url>
-<loc>https://www.diarivalencia.com/Brand/intro</loc>
+<loc>https://www.elifgodeok-central.co.kr/Brand/intro</loc>
 <lastmod>2026-06-17T09:00:00+09:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
@@ -24,7 +24,7 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <!-- 사업안내 -->
 <url>
-<loc>https://www.diarivalencia.com/BusinessGuide/intro</loc>
+<loc>https://www.elifgodeok-central.co.kr/BusinessGuide/intro</loc>
 <lastmod>2026-06-17T09:00:00+09:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
@@ -32,14 +32,14 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <!-- 입지환경 -->
 <url>
-<loc>https://www.diarivalencia.com/LocationEnvironment/intro</loc>
+<loc>https://www.elifgodeok-central.co.kr/LocationEnvironment/intro</loc>
 <lastmod>2026-06-17T09:00:00+09:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 </url>
 
 <url>
-<loc>https://www.diarivalencia.com/LocationEnvironment/primium</loc>
+<loc>https://www.elifgodeok-central.co.kr/LocationEnvironment/primium</loc>
 <lastmod>2026-06-17T09:00:00+09:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
@@ -47,7 +47,7 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <!-- 단지안내 -->
 <url>
-<loc>https://www.diarivalencia.com/ComplexGuide/intro</loc>
+<loc>https://www.elifgodeok-central.co.kr/ComplexGuide/intro</loc>
 <lastmod>2026-06-17T09:00:00+09:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
@@ -55,35 +55,35 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <!-- 세대안내 -->
 <url>
-<loc>https://www.diarivalencia.com/FloorPlan/59A</loc>
+<loc>https://www.elifgodeok-central.co.kr/FloorPlan/59A</loc>
 <lastmod>2026-06-17T09:00:00+09:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>https://www.diarivalencia.com/FloorPlan/59B</loc>
+<loc>https://www.elifgodeok-central.co.kr/FloorPlan/59B</loc>
 <lastmod>2026-06-17T09:00:00+09:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>https://www.diarivalencia.com/FloorPlan/84A</loc>
+<loc>https://www.elifgodeok-central.co.kr/FloorPlan/84A</loc>
 <lastmod>2026-06-17T09:00:00+09:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>https://www.diarivalencia.com/FloorPlan/84B</loc>
+<loc>https://www.elifgodeok-central.co.kr/FloorPlan/84B</loc>
 <lastmod>2026-06-17T09:00:00+09:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>https://www.diarivalencia.com/FloorPlan/Emodel</loc>
+<loc>https://www.elifgodeok-central.co.kr/FloorPlan/Emodel</loc>
 <lastmod>2026-06-17T09:00:00+09:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
@@ -91,7 +91,7 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <!-- 홍보센터 -->
 <url>
-<loc>https://www.diarivalencia.com/Promotion/Customer</loc>
+<loc>https://www.elifgodeok-central.co.kr/Promotion/Customer</loc>
 <lastmod>2026-06-17T09:00:00+09:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.9</priority>

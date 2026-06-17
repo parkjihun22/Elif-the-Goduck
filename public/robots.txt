@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.diarivalencia.com/sitemap.xml
+Sitemap: https://www.elifgodeok-central.co.kr/sitemap.xml

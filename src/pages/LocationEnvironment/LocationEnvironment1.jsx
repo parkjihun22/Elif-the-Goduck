@@ -110,7 +110,7 @@ const LocationEnvironment1 = () => {
 
   <link
     rel="canonical"
-    href="https://www.diarivalencia.com/LocationEnvironment/intro"
+    href="https://www.elifgodeok-central.co.kr/LocationEnvironment/intro"
   />
 
   {/* Open Graph */}
@@ -129,12 +129,12 @@ const LocationEnvironment1 = () => {
 
   <meta
     property="og:url"
-    content="https://www.diarivalencia.com/LocationEnvironment/intro"
+    content="https://www.elifgodeok-central.co.kr/LocationEnvironment/intro"
   />
 
   <meta
     property="og:image"
-    content="https://www.diarivalencia.com/img/og/location.jpg"
+    content="https://www.elifgodeok-central.co.kr/img/og/location.jpg"
   />
 
   <meta property="og:image:width" content="1200" />
@@ -155,12 +155,12 @@ const LocationEnvironment1 = () => {
 
   <meta
     name="twitter:image"
-    content="https://www.diarivalencia.com/img/og/location.jpg"
+    content="https://www.elifgodeok-central.co.kr/img/og/location.jpg"
   />
 
   <meta
     name="twitter:url"
-    content="https://www.diarivalencia.com/LocationEnvironment/intro"
+    content="https://www.elifgodeok-central.co.kr/LocationEnvironment/intro"
   />
 
   {/* JSON-LD */}
@@ -171,14 +171,14 @@ const LocationEnvironment1 = () => {
 
       "name": "엘리프 고덕 센트럴하이 - 입지환경",
 
-      "url": "https://www.diarivalencia.com/LocationEnvironment/intro",
+      "url": "https://www.elifgodeok-central.co.kr/LocationEnvironment/intro",
 
       "description":
         "엘리프 고덕 센트럴하이 입지환경 페이지입니다. 평택 고덕국제화계획지구 Aab-13BL ELIF 브랜드 아파트의 생활 인프라, 서정리역 생활권, 교육환경 및 쾌적한 주거환경을 안내합니다.",
 
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "contentUrl": "https://www.diarivalencia.com/img/og/location.jpg",
+        "contentUrl": "https://www.elifgodeok-central.co.kr/img/og/location.jpg",
         "width": 1200,
         "height": 630
       },
@@ -190,13 +190,13 @@ const LocationEnvironment1 = () => {
             "@type": "ListItem",
             "position": 1,
             "name": "홈",
-            "item": "https://www.diarivalencia.com/"
+            "item": "https://www.elifgodeok-central.co.kr/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "입지환경",
-            "item": "https://www.diarivalencia.com/LocationEnvironment/intro"
+            "item": "https://www.elifgodeok-central.co.kr/LocationEnvironment/intro"
           }
         ]
       }

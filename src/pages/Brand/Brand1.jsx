@@ -65,7 +65,7 @@ const Brand1 = () => {
 
   <link
     rel="canonical"
-    href="https://www.diarivalencia.com/Brand/intro"
+    href="https://www.elifgodeok-central.co.kr/Brand/intro"
   />
 
   <meta name="robots" content="index,follow" />
@@ -85,12 +85,12 @@ const Brand1 = () => {
 
   <meta
     property="og:url"
-    content="https://www.diarivalencia.com/Brand/intro"
+    content="https://www.elifgodeok-central.co.kr/Brand/intro"
   />
 
   <meta
     property="og:image"
-    content="https://www.diarivalencia.com/images/og/main.jpg"
+    content="https://www.elifgodeok-central.co.kr/images/og/main.jpg"
   />
 </Helmet>
 

@@ -46,7 +46,7 @@ const LocationEnvironment1 = () => {
   return (
     <div className={styles.container}>
 
-      
+
 <Helmet>
   <title>엘리프 고덕 센트럴하이 | 프리미엄</title>
 
@@ -62,7 +62,7 @@ const LocationEnvironment1 = () => {
 
   <link
     rel="canonical"
-    href="https://www.diarivalencia.com/LocationEnvironment/primium"
+    href="https://www.elifgodeok-central.co.kr/LocationEnvironment/primium"
   />
 
   <meta name="robots" content="index,follow" />
@@ -82,12 +82,12 @@ const LocationEnvironment1 = () => {
 
   <meta
     property="og:url"
-    content="https://www.diarivalencia.com/LocationEnvironment/primium"
+    content="https://www.elifgodeok-central.co.kr/LocationEnvironment/primium"
   />
 
   <meta
     property="og:image"
-    content="https://www.diarivalencia.com/img/og/location.jpg"
+    content="https://www.elifgodeok-central.co.kr/img/og/location.jpg"
   />
 
   <meta name="twitter:card" content="summary_large_image" />
@@ -104,7 +104,7 @@ const LocationEnvironment1 = () => {
 
   <meta
     name="twitter:image"
-    content="https://www.diarivalencia.com/img/og/location.jpg"
+    content="https://www.elifgodeok-central.co.kr/img/og/location.jpg"
   />
 </Helmet>
 

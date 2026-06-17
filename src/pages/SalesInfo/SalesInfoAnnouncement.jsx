@@ -88,7 +88,7 @@ const ComplexGuide1 = () => {
 
   <link
     rel="canonical"
-    href="https://www.diarivalencia.com/SalesInfo/announcement"
+    href="https://www.elifgodeok-central.co.kr/SalesInfo/announcement"
   />
 
   <meta name="robots" content="index,follow" />

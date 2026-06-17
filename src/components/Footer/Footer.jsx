@@ -11,7 +11,7 @@ import InterestPopup from "../InterestPopup/InterestPopup";
 
 // FAMILY SITE 목록 예시
 const partnerSites = [
-  { name: "엘리프 고덕 센트럴하이", url: "https://www.diarivalencia.com/" },
+  { name: "엘리프 고덕 센트럴하이", url: "https://www.elifgodeok-central.co.kr/" },
 ];
 
 const Footer = () => {

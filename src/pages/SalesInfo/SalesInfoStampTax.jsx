@@ -60,7 +60,7 @@ const ComplexGuide1 = () => {
     name="description"
     content="엘리프 고덕 센트럴하이 인지세 납부 안내. 분양 계약 시 필요한 인지세 기준, 납부 금액, 납부 방법 및 유의사항을 확인하세요."
   />
-  <link rel="canonical" href="https://www.diarivalencia.com/SalesInfo/stampTax" />
+  <link rel="canonical" href="https://www.elifgodeok-central.co.kr/SalesInfo/stampTax" />
   <meta name="robots" content="index,follow" />
 </Helmet>
 

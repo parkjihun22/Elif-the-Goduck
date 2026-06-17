@@ -62,7 +62,7 @@ const BusinessGuide2 = () => {
     name="keywords"
     content="엘리프 고덕 센트럴하이 분양일정, 고덕국제신도시 수자인풍경채 청약, 평택 고덕 분양일정, 엘리프 고덕 센트럴하이 모집공고, 엘리프 고덕 센트럴하이 계약"
   />
-  <link rel="canonical" href="https://www.diarivalencia.com/BusinessGuide/plan" />
+  <link rel="canonical" href="https://www.elifgodeok-central.co.kr/BusinessGuide/plan" />
   <meta name="robots" content="index,follow" />
 </Helmet>
 

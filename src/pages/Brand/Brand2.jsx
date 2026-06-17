@@ -59,7 +59,7 @@ const Brand2 = () => {
 
   <link
     rel="canonical"
-    href="https://www.diarivalencia.com/Brand/video"
+    href="https://www.elifgodeok-central.co.kr/Brand/video"
   />
 
   <meta name="robots" content="index,follow" />
@@ -80,12 +80,12 @@ const Brand2 = () => {
 
   <meta
     property="og:url"
-    content="https://www.diarivalencia.com/Brand/video"
+    content="https://www.elifgodeok-central.co.kr/Brand/video"
   />
 
   <meta
     property="og:image"
-    content="https://www.diarivalencia.com/images/og/main.jpg"
+    content="https://www.elifgodeok-central.co.kr/images/og/main.jpg"
   />
 
   {/* Twitter */}
@@ -103,7 +103,7 @@ const Brand2 = () => {
 
   <meta
     name="twitter:image"
-    content="https://www.diarivalencia.com/images/og/main.jpg"
+    content="https://www.elifgodeok-central.co.kr/images/og/main.jpg"
   />
 </Helmet>
 

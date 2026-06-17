@@ -82,7 +82,7 @@ const BusinessGuide2 = () => {
 
   <link
     rel="canonical"
-    href="https://www.diarivalencia.com/BusinessGuide/documents"
+    href="https://www.elifgodeok-central.co.kr/BusinessGuide/documents"
   />
 
   {/* Open Graph */}
@@ -101,12 +101,12 @@ const BusinessGuide2 = () => {
 
   <meta
     property="og:url"
-    content="https://www.diarivalencia.com/BusinessGuide/documents"
+    content="https://www.elifgodeok-central.co.kr/BusinessGuide/documents"
   />
 
   <meta
     property="og:image"
-    content="https://www.diarivalencia.com/Main1.png"
+    content="https://www.elifgodeok-central.co.kr/Main1.png"
   />
 
   <meta name="twitter:card" content="summary_large_image" />
@@ -123,7 +123,7 @@ const BusinessGuide2 = () => {
 
   <meta
     name="twitter:image"
-    content="https://www.diarivalencia.com/Main1.png"
+    content="https://www.elifgodeok-central.co.kr/Main1.png"
   />
 </Helmet>
 
