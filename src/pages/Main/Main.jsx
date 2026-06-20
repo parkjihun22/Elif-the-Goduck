@@ -20,6 +20,7 @@ import InterestPopup from "../../components/InterestPopup/InterestPopup"; // 새
 import UnitInfoSection from "../../components/UnitInfoSection/UnitInfoSection";
 import MobileNewsSection from "../../components/MobileNewsSection/MobileNewsSection";
 import newsLists from "../../NewsList"
+import FAQSection from "../../components/FAQSection/FAQSection"
 
 import mainImage from "../../assets/Main/Main1.jpg";
 import section1_Image1 from "../../assets/Main/section1-img1.jpg";
@@ -469,6 +470,7 @@ const Main = () => {
                 잔여세대를 안내드립니다.
               </div>
             </div>
+            <FAQSection />
 
             {/* 입력 폼 */}
             <form
@@ -758,6 +760,7 @@ const Main = () => {
             </div>
           </div> */}
           {/* <MobileNewsSection newsList={newsLists} /> */}
+          <FAQSection />
 
             {/* 모바일 방문예약 섹션 */}
             <div className={styles.mobileVisitContainer}>
