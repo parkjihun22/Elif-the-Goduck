@@ -1,190 +1,268 @@
-/* 전체 화면을 덮는 오버레이 */
 .popupOverlay {
   position: fixed;
-  top: 0;       // 화면 최상단부터
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
+  background: rgba(3, 8, 18, 0.68);
+  backdrop-filter: blur(4px);
   display: flex;
-  align-items: center;    // 세로축 중앙
-  justify-content: center; // 가로축 중앙
-  z-index: 1100;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 20px;
 }
 
-/* 팝업 래퍼: 팝업컨테이너 + 닫기버튼을 감싸는 요소 */
 .popupWrapper {
   position: relative;
-  /* PC 기본값: 가로 폭을 30%, 최대 500px 정도로 제한 */
-  width: 30%;
-  max-width: 500px;
+  width: 31vw;
+  max-width: 520px;
+  min-width: 420px;
+  animation: popupFadeUp 0.35s ease forwards;
 }
 
-/* 팝업창 컨테이너 */
 .popupContainer {
-  background: #fff;
-  border-radius: 0;          // 모서리 둥글기 제거
+  background: #ffffff;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.38);
   display: flex;
   flex-direction: column;
 }
 
-/* 상단 배너 이미지 영역 */
 .headerImage {
   width: 100%;
-  height: 40%; // 이미지 높이 유지
-  overflow: hidden;
+  line-height: 0;
+  background: #06162d;
+
   img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; // 이미지 비율 유지
+    height: auto;
+    display: block;
   }
 }
 
-/* 폼 컨테이너 */
 .formContainer {
-  width: 95%;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 1.5rem;
-  }
+  width: 100%;
+  padding: 24px 34px 30px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f8f5 100%);
 
   form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
+    gap: 14px;
   }
 
   .formGroup {
     display: flex;
     flex-direction: column;
-    margin-bottom: 0.6vw;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
+    width: 90%;
 
     label {
-      font-size: 20px;
-      color: #555;
-      margin-bottom: 5px;
-      text-align: center;
+      font-family: 'SUIT-Regular';
+      font-size: 15px;
+      font-weight: 700;
+      color: #1d2633;
+      margin-bottom: 7px;
+      letter-spacing: -0.04em;
+
       span {
-        color: red;
-        margin-left: 3px;
+        color: #b40000;
+        margin-left: 4px;
       }
     }
 
     input {
-      padding: 12px;
+      width: 100%;
+      height: 48px;
+      padding: 0 15px;
       font-size: 16px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      transition: border-color 0.3s;
-      text-align: center;
-      width: 70%;
-      max-width: 400px;
-      margin: 0 auto;
-      display: block;
+      border: 1px solid #d7d7d7;
+      border-radius: 10px;
+      background: #ffffff;
+      color: #111;
+      outline: none;
+      transition: all 0.25s ease;
+      box-sizing: border-box;
+
       &:focus {
-        outline: none;
-        border-color: #0f4438;
+        border-color: #d4af37;
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.16);
       }
     }
   }
 
   .submitBtn {
-    width: 80%;
-    padding: 0.5vw;
-    margin-top: 0.5vw;
-    font-size: 1vw;
-    font-family: 'GongGothicMedium';
-    background-color: #0f4438;
-    color: #fff;
+    width: 100%;
+    height: 52px;
+    margin-top: 6px;
     border: none;
-    border-radius: 0;     // 버튼 모서리도 각지게 (원하면 유지)
+    border-radius: 12px;
+    background: linear-gradient(135deg, #06162d 0%, #0f4438 100%);
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 800;
+    font-family: 'SUIT-Regular';
     cursor: pointer;
-    transition: background-color 0.3s;
+    letter-spacing: -0.04em;
+    transition: all 0.25s ease;
+
     &:hover {
-      background-color: #0f4438;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(15, 68, 56, 0.28);
+    }
+
+    &:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
     }
   }
 }
 
-/* 모바일 전용 미디어 쿼리 */
-@media screen and (max-width: 768px) {
-  .popupWrapper {
-    width: 70%;     // 모바일에서 화면 폭의 90%
-    max-width: 90%;
-  }
-  .headerImage {
-    height: 50%; // 모바일에 맞게 이미지 높이 조정
-  }
-  .formContainer {
-    h2 {
-      font-size: 1.4rem; // 조금 줄이기
-    }
-    .formGroup {
-      margin-bottom: 0.3rem;
-      label {
-        font-size: 1.1rem;
-      }
-      input {
-        width: 70%;
-        font-size: 1rem;
-        padding: 10px;
-      }
-    }
-    .submitBtn {
-      width: 78%;
-      font-size: 1rem;
-      margin-top: 20px;
-      padding: 0.8rem;
-    }
-  }
-}
-
-/* 성공 메시지 스타일 */
 .successMessage {
-  font-size: 0.9vw; 
-  color: #000000;
-}
-@media screen and (max-width: 768px) {
-  .successMessage {
-    font-size: 2.3vw;
-  }
+  min-height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #06162d;
+  letter-spacing: -0.04em;
 }
 
-/* 외부 닫기 버튼 박스: 래퍼 내부에 절대 배치 */
 .externalCloseBtnBox {
   position: absolute;
-  top: 0.1px;        // 팝업 상단에서 10px
-  right: -30px;     // 팝업 오른쪽 경계 조금 벗어나도록
-  z-index: 1200;
+  top: -14px;
+  right: -14px;
+  z-index: 2;
 }
 
-/* 외부 닫기 버튼 */
 .externalCloseBtn {
-  background-color: #fff;
-  border: none;
-  width: 30px;    // px 단위로 고정
-  height: 30px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #000;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: #06162d;
+  color: #ffffff;
+  font-size: 26px;
+  line-height: 34px;
+  font-weight: 300;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.32);
+  transition: all 0.25s ease;
 
   &:hover {
-    background-color: #f2f2f2;
+    background: #0f4438;
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes popupFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .popupOverlay {
+    padding: 10px;
+    align-items: center;
+    overflow-y: auto;
+  }
+
+  .popupWrapper {
+    width: 90vw;
+    max-width: 430px;
+    min-width: 0;
+    max-height: 94vh;
+  }
+
+  .popupContainer {
+    border-radius: 14px;
+    max-height: 94vh;
+    overflow-y: auto;
+  }
+
+  .headerImage {
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+  }
+
+  .formContainer {
+    padding: 14px 18px 18px;
+
+    form {
+      gap: 9px;
+    }
+
+    .formGroup {
+      label {
+        font-size: 13px;
+        margin-bottom: 5px;
+      }
+
+      input {
+        height: 41px;
+        font-size: 14px;
+        border-radius: 8px;
+      }
+    }
+
+    .submitBtn {
+      width: 90%;
+      height: 45px;
+      font-size: 2.5vw;
+      border-radius: 1vw;
+      margin-top: 4px;
+    }
+  }
+
+  .externalCloseBtnBox {
+    top: -10px;
+    right: -8px;
+  }
+
+  .externalCloseBtn {
+    width: 34px;
+    height: 34px;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .successMessage {
+    min-height: 100px;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .popupOverlay {
+    padding: 8px;
+  }
+
+  .popupWrapper {
+    width: 92vw;
+    max-width: 430px;
+  }
+
+  .popupContainer {
+    max-height: 94vh;
+  }
+
+  .formContainer {
+    padding: 13px 16px 17px;
   }
 }
