@@ -1,55 +1,101 @@
 import React, { useState, useEffect } from "react";
+import { useCookies } from "react-cookie";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
-import styles from './Popup.module.scss'
-import page1 from '../../assets/Popup/page1.jpg'
-import page2 from '../../assets/Popup/page2.jpg'
-// import page3 from '../../assets/Popup/page3.jpg'
+import styles from "./Popup.module.scss";
+import page1 from "../../assets/Popup/page1.jpg";
 
 const popupArray = [
-  { img: page1, url: "" },
-  { img: page2, url: "" },
+  { img: page1 },
+];
 
-]
-
-const Popup = () => {
-  // 팝업이 열려있는지 여부를 추적하는 상태
+const Popup = ({ openInterestPopup = () => {} }) => {
   const [isClick, setIsClick] = useState(false);
 
-  // 페이지 로드 시 2초 후 팝업이 열리도록 useEffect 사용
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsClick(true); // 2초 후에 팝업 자동 열기
-    }, 3000); // 2초 후에 실행
+  const [cookies, setCookie] = useCookies();
+  const isPopupShown = cookies["Popup_Cookie_PC"];
 
-    // 클린업 함수 (컴포넌트가 언마운트될 때 타이머를 정리)
-    return () => clearTimeout(timer);
-  }, []); // 빈 배열을 전달하여 컴포넌트 마운트 시 한 번만 실행
+useEffect(() => {
+  if (isPopupShown) return;
+
+  const timer = setTimeout(() => {
+    setIsClick(true);
+  }, 3000);
+
+  return () => clearTimeout(timer);
+}, [isPopupShown]);
+
+const handleTodayClose = () => {
+  const expires = new Date();
+  expires.setDate(expires.getDate() + 1);
+
+  setCookie("Popup_Cookie_PC", true, {
+    path: "/",
+    expires,
+  });
+
+  setIsClick(false);
+};
+
+  const handleClose = () => {
+    setIsClick(false);
+  };
+
+  const handleReservationClick = () => {
+    setIsClick(false);
+    openInterestPopup();
+  };
+  if (isPopupShown) return null;
 
   return (
     <div className={styles.container}>
-      {isClick &&
-        <div className={styles.imgContainer} >
-          {popupArray.map((value, idx) => (
-            <img
-              key={idx}  // key를 넣어야 배열 렌더링 시 효율적으로 동작
-              className={styles.popupImg}
-              src={value.img}
-              alt={`progio-popup-image-${idx}`}
-            />
-          ))}
+      {isClick && (
+        <div className={styles.popupBox}>
+          <div className={styles.imgContainer}>
+            {popupArray.map((value, idx) => (
+              <div className={styles.imageBox} key={idx}>
+                <img
+                  className={styles.popupImg}
+                  src={value.img}
+                  alt={`popup-image-${idx}`}
+                />
+
+                <button
+                  type="button"
+                  className={styles.visitReservationBtn}
+                  onClick={handleReservationClick}
+                  aria-label="방문예약 팝업 열기"
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.btnContainer}>
+            <button type="button" onClick={handleTodayClose}>
+              오늘 하루 보지 않기
+            </button>
+            <button type="button" onClick={handleClose}>
+              닫기
+            </button>
+          </div>
         </div>
-      }
-      <div className={styles.openPopupBtn} onClick={() => setIsClick(!isClick)}>
+      )}
+
+      <div
+        className={styles.openPopupBtn}
+        onClick={() => setIsClick(!isClick)}
+      >
         <div className={styles.btnIcon}>
-          {isClick ? <FaAngleLeft size={20} color={"#FFFFFF"} /> : <FaAngleRight size={20} color={"#FFFFFF"} />}
+          {isClick ? (
+            <FaAngleLeft size={20} color="#FFFFFF" />
+          ) : (
+            <FaAngleRight size={20} color="#FFFFFF" />
+          )}
         </div>
-        <div className={styles.btnText}>
-          POPUP
-        </div>
+        <div className={styles.btnText}>POPUP</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Popup;
